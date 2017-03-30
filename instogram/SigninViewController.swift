@@ -11,9 +11,6 @@ import Firebase
 
 class SigninViewController: UIViewController {
 
-//    let email: String? = "aaa@gmail.com"
-//    let password: String? = "aaaaaa"
-//    let confirmPassword: String? = "aaaaaa"
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
