@@ -11,22 +11,28 @@ import Firebase
 
 class SigninViewController: UIViewController {
 
-    let email: String? = "aaa@gmail.com"
-    let password: String? = "aaaaaa"
-    let confirmPassword: String? = "aaaaaa"
+//    let email: String? = "aaa@gmail.com"
+//    let password: String? = "aaaaaa"
+//    let confirmPassword: String? = "aaaaaa"
+    @IBOutlet weak var emailField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
+    
+    @IBAction func SignInBtnClick(_ sender: Any) {
+        signIn()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.navigationController?.navigationBar.isHidden = true
+    }
     
     override func viewDidLoad() {
         print("使用者已經登入 : \(FIRAuth.auth()?.currentUser)")
-        //Logout
-//        try! FIRAuth.auth()?.signOut()
-        
-//        signIn()
-        
-//        signUp()
+
     }
     
     func signIn(){
-        guard let email = email, let password = password else {
+        guard let email = emailField.text, let password = passwordField.text else {
             print("Email 或密碼錯誤")
             return
         }
@@ -43,30 +49,5 @@ class SigninViewController: UIViewController {
         })
     }
     
-    func signUp() {
-        guard let email = email, let password = password , let confirmPassword = confirmPassword else {
-            print("資料錯誤")
-            return
-        }
-        
-        if password != confirmPassword {
-            print("重複密碼錯誤")
-            return
-        }
-        
-        FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
-            guard let user = user else {
-                print("註冊錯誤")
-                print("ERROR:\(error)")
-                return
-            }
-            
-            print("使用者\(user.email)註冊成功")
-            
-        })
-        
-        
-        
-    }
-
+    
 }

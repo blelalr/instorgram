@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -19,13 +20,84 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="eTV-ks-ltC">
+                                <rect key="frame" x="24" y="120" width="327" height="201"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L8E-DU-NNc">
+                                        <rect key="frame" x="0.0" y="0.0" width="327" height="66"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="66" id="emd-ah-YNA"/>
+                                        </constraints>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Instogrom">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.53060281389999997" green="0.6373229547" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="55" name="SignPainter-HouseScript"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="91b-hK-P6L">
+                                        <rect key="frame" x="0.0" y="81" width="327" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yrG-ce-wBv">
+                                        <rect key="frame" x="0.0" y="126" width="327" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ND3-yL-0jV">
+                                        <rect key="frame" x="0.0" y="171" width="327" height="30"/>
+                                        <color key="backgroundColor" red="0.53060281393909103" green="0.63732295470259426" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="登入">
+                                            <color key="titleColor" red="0.9684723985" green="0.9684723985" blue="0.9684723985" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="SignInBtnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9Ct-2b-6jr"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="還沒有帳號嗎？" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OpG-WN-x6S">
+                                <rect key="frame" x="109" y="343" width="100" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Clw-0s-WT1">
+                                <rect key="frame" x="204" y="336" width="62" height="30"/>
+                                <state key="normal" title="按此註冊"/>
+                                <connections>
+                                    <segue destination="IcH-tU-Z65" kind="show" id="zut-Ga-kue"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="eTV-ks-ltC" secondAttribute="trailing" constant="8" id="GKN-Ph-Yl5"/>
+                            <constraint firstItem="eTV-ks-ltC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="JRo-5N-2nA"/>
+                            <constraint firstItem="OpG-WN-x6S" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="93" id="Pjn-Ip-0Lo"/>
+                            <constraint firstItem="eTV-ks-ltC" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="fdA-YX-kOi"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Clw-0s-WT1" secondAttribute="trailing" constant="93" id="hTw-Hi-Rf5"/>
+                            <constraint firstItem="Clw-0s-WT1" firstAttribute="top" secondItem="eTV-ks-ltC" secondAttribute="bottom" constant="15" id="jQL-cI-9v8"/>
+                            <constraint firstItem="OpG-WN-x6S" firstAttribute="top" secondItem="eTV-ks-ltC" secondAttribute="bottom" constant="22" id="te8-7n-RdV"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="9fE-Gs-7gI"/>
+                    <connections>
+                        <outlet property="emailField" destination="91b-hK-P6L" id="e0T-IZ-ISp"/>
+                        <outlet property="passwordField" destination="yrG-ce-wBv" id="ck7-fY-1px"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="192.80000000000001" y="-170.46476761619192"/>
+            <point key="canvasLocation" x="100" y="-431.33433283358323"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gXu-T5-v3c">
@@ -64,13 +136,118 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hH0-8x-AkT">
+                                <rect key="frame" x="263" y="44" width="96" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="登出"/>
+                                <connections>
+                                    <action selector="SignOutTap:" destination="7OV-7B-oCI" eventType="touchUpInside" id="GSR-Um-GR0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TUt-eS-i7R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-748" y="571.66416791604206"/>
+            <point key="canvasLocation" x="-769" y="728"/>
+        </scene>
+        <!--Sign Up View Controller-->
+        <scene sceneID="jmb-xR-amO">
+            <objects>
+                <viewController id="IcH-tU-Z65" customClass="SignUpViewController" customModule="instogram" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Fao-4q-KfR"/>
+                        <viewControllerLayoutGuide type="bottom" id="jhE-TK-KGM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vkG-Aa-qQh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="ggv-dc-tqr">
+                                <rect key="frame" x="24" y="120" width="327" height="246"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gsw-QK-5DY">
+                                        <rect key="frame" x="0.0" y="0.0" width="327" height="66"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="66" id="fRD-26-tT7"/>
+                                        </constraints>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Instogrom">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.53060281389999997" green="0.6373229547" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="55" name="SignPainter-HouseScript"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KSD-iL-lAA">
+                                        <rect key="frame" x="0.0" y="81" width="327" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JSg-Dj-Pn3">
+                                        <rect key="frame" x="0.0" y="126" width="327" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Reapeat Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Ue-8N-0Xa">
+                                        <rect key="frame" x="0.0" y="171" width="327" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qjR-Ox-V8E">
+                                        <rect key="frame" x="0.0" y="216" width="327" height="30"/>
+                                        <color key="backgroundColor" red="0.53060281389999997" green="0.6373229547" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="註冊">
+                                            <color key="titleColor" red="0.9684723985" green="0.9684723985" blue="0.9684723985" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="signUp:" destination="IcH-tU-Z65" eventType="touchUpInside" id="5gI-wz-aHn"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="已經有帳號了？" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Esl-xB-YlR">
+                                <rect key="frame" x="109" y="388" width="100" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7zN-g5-eKe">
+                                <rect key="frame" x="204" y="381" width="62" height="30"/>
+                                <state key="normal" title="按此登入"/>
+                                <connections>
+                                    <action selector="backToSignInTap:" destination="IcH-tU-Z65" eventType="touchUpInside" id="AJA-CJ-wQ2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ggv-dc-tqr" firstAttribute="top" secondItem="Fao-4q-KfR" secondAttribute="bottom" constant="100" id="0OC-ff-qzc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ggv-dc-tqr" secondAttribute="trailing" constant="8" id="0mh-gG-JHX"/>
+                            <constraint firstItem="7zN-g5-eKe" firstAttribute="top" secondItem="ggv-dc-tqr" secondAttribute="bottom" constant="15" id="Bsj-Mw-IvD"/>
+                            <constraint firstItem="Esl-xB-YlR" firstAttribute="leading" secondItem="vkG-Aa-qQh" secondAttribute="leadingMargin" constant="93" id="KFZ-6r-9eC"/>
+                            <constraint firstItem="ggv-dc-tqr" firstAttribute="leading" secondItem="vkG-Aa-qQh" secondAttribute="leadingMargin" constant="8" id="Sgl-Ab-y1d"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7zN-g5-eKe" secondAttribute="trailing" constant="93" id="qh5-GR-xw8"/>
+                            <constraint firstItem="Esl-xB-YlR" firstAttribute="top" secondItem="ggv-dc-tqr" secondAttribute="bottom" constant="22" id="wLa-2M-UmV"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="gcO-lR-UfR"/>
+                    <connections>
+                        <outlet property="emailField" destination="KSD-iL-lAA" id="Efb-mC-B9a"/>
+                        <outlet property="passwordField" destination="JSg-Dj-Pn3" id="XQx-gA-P5T"/>
+                        <outlet property="repeatPasswordField" destination="6Ue-8N-0Xa" id="oZB-Xs-LTY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cXC-P8-KMP" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="857" y="-431"/>
         </scene>
     </scenes>
 </document>

@@ -7,8 +7,12 @@
 //
 
 import UIKit
+import Firebase
 
 class MainViewController: UIViewController {
-
+    @IBAction func SignOutTap(_ sender: Any) {
+        try! FIRAuth.auth()?.signOut()
+    }
+    
    
 }
