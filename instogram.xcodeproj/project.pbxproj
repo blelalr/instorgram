@@ -14,6 +14,7 @@
 		17393EAA1E893C3A006DDAF9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 17393EA91E893C3A006DDAF9 /* GoogleService-Info.plist */; };
 		17393EAC1E8941DF006DDAF9 /* SigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17393EAB1E8941DF006DDAF9 /* SigninViewController.swift */; };
 		17393EB01E895496006DDAF9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17393EAF1E895496006DDAF9 /* MainViewController.swift */; };
+		17393EB21E8D2417006DDAF9 /* TakePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17393EB11E8D2416006DDAF9 /* TakePhotoViewController.swift */; };
 		3698A19013375AFB696B4F98 /* Pods_instogram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76B04E18D55D32FD99D20DD2 /* Pods_instogram.framework */; };
 		50C7089B1E8CB1E900FF2D94 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C7089A1E8CB1E900FF2D94 /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
@@ -30,6 +31,7 @@
 		17393EAB1E8941DF006DDAF9 /* SigninViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SigninViewController.swift; sourceTree = "<group>"; };
 		17393EAD1E8944CE006DDAF9 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		17393EAF1E895496006DDAF9 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		17393EB11E8D2416006DDAF9 /* TakePhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TakePhotoViewController.swift; sourceTree = "<group>"; };
 		4D5D47AD8827116F2D98FD52 /* Pods-instogram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instogram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-instogram/Pods-instogram.debug.xcconfig"; sourceTree = "<group>"; };
 		50C7089A1E8CB1E900FF2D94 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		76B04E18D55D32FD99D20DD2 /* Pods_instogram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_instogram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,6 +79,7 @@
 				17393EAB1E8941DF006DDAF9 /* SigninViewController.swift */,
 				17393EAF1E895496006DDAF9 /* MainViewController.swift */,
 				50C7089A1E8CB1E900FF2D94 /* SignUpViewController.swift */,
+				17393EB11E8D2416006DDAF9 /* TakePhotoViewController.swift */,
 			);
 			path = instogram;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 				17393E981E893590006DDAF9 /* AppDelegate.swift in Sources */,
 				50C7089B1E8CB1E900FF2D94 /* SignUpViewController.swift in Sources */,
 				17393EAC1E8941DF006DDAF9 /* SigninViewController.swift in Sources */,
+				17393EB21E8D2417006DDAF9 /* TakePhotoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,6 +8,9 @@ target 'instogram' do
   # Pods for instogram
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
+  pod 'Firebase/Storage'
+  pod 'Firebase/Database'
+  
   pod 'Kingfisher', '~> 3.0'
 
 end
