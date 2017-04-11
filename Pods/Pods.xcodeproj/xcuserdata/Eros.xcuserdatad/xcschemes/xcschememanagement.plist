@@ -14,12 +14,22 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Kingfisher.xcscheme</key>
+		<key>Pods-instogram.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-instogram.xcscheme</key>
+		<key>SDWebImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SVProgressHUD.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SwiftyJSON.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -32,17 +42,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>6BEB00C56867FCD43E7B32685601687C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>869FC05C9A3CE8DC1FFAFC89C46E42E5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BC0CBE0C2B7FB5D81654DB41251F7E02</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>C052BEBFBD0AB5218CC64BA3450F6547</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C4944FEC314D1A66588651D006273ADE</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C5066A76C65CA627E8ABCAF568B3BB73</key>
+		<key>C88B4C9ED46AC79140D51AE8A623D9E3</key>
 		<dict>
 			<key>primary</key>
 			<true/>

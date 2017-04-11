@@ -10,7 +10,9 @@ target 'instogram' do
   pod 'Firebase/Auth'
   pod 'Firebase/Storage'
   pod 'Firebase/Database'
+  pod 'FirebaseUI/Database', '~> 3.0'
+  pod 'SwiftyJSON'
+  pod 'SVProgressHUD'
+  pod 'SDWebImage'
   
-  pod 'Kingfisher', '~> 3.0'
-
 end
