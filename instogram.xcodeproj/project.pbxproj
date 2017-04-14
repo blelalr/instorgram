@@ -16,11 +16,9 @@
 		17393EB21E8D2417006DDAF9 /* TakePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17393EB11E8D2416006DDAF9 /* TakePhotoViewController.swift */; };
 		17393EB41E910854006DDAF9 /* DoneCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17393EB31E910854006DDAF9 /* DoneCaptureViewController.swift */; };
 		17393EB71E9120A1006DDAF9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17393EB51E9120A1006DDAF9 /* Main.storyboard */; };
-		17C2E25E1E93915700764337 /* PhotoCellDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C2E25D1E93915700764337 /* PhotoCellDataSource.swift */; };
 		17C2E2601E93927700764337 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C2E25F1E93927700764337 /* Post.swift */; };
 		17C2E2621E93B18800764337 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C2E2611E93B18800764337 /* Comment.swift */; };
 		17C2E2641E93B34700764337 /* CommentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C2E2631E93B34700764337 /* CommentTableViewController.swift */; };
-		17C2E2691E93B48900764337 /* CommentCellDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C2E2681E93B48900764337 /* CommentCellDataSource.swift */; };
 		50C7089B1E8CB1E900FF2D94 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C7089A1E8CB1E900FF2D94 /* SignUpViewController.swift */; };
 		B5A117C67C6EAED657F12BE5 /* Pods_instogram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA574B33F7DED4743A08D5E5 /* Pods_instogram.framework */; };
 /* End PBXBuildFile section */
@@ -38,11 +36,9 @@
 		17393EB11E8D2416006DDAF9 /* TakePhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TakePhotoViewController.swift; sourceTree = "<group>"; };
 		17393EB31E910854006DDAF9 /* DoneCaptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoneCaptureViewController.swift; sourceTree = "<group>"; };
 		17393EB61E9120A1006DDAF9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		17C2E25D1E93915700764337 /* PhotoCellDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCellDataSource.swift; sourceTree = "<group>"; };
 		17C2E25F1E93927700764337 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		17C2E2611E93B18800764337 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		17C2E2631E93B34700764337 /* CommentTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTableViewController.swift; sourceTree = "<group>"; };
-		17C2E2681E93B48900764337 /* CommentCellDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentCellDataSource.swift; sourceTree = "<group>"; };
 		50C7089A1E8CB1E900FF2D94 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		524BCE4312A7C1C1D6FAC355 /* Pods-instogram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instogram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-instogram/Pods-instogram.debug.xcconfig"; sourceTree = "<group>"; };
 		BA574B33F7DED4743A08D5E5 /* Pods_instogram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_instogram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,7 +80,6 @@
 			children = (
 				17C2E2671E93B42200764337 /* ViewController */,
 				17C2E2661E93B3DB00764337 /* Model */,
-				17C2E2651E93B3B900764337 /* DataSource */,
 				17393EB51E9120A1006DDAF9 /* Main.storyboard */,
 				17393E971E893590006DDAF9 /* AppDelegate.swift */,
 				17393E9E1E893590006DDAF9 /* Assets.xcassets */,
@@ -93,15 +88,6 @@
 				17393EA91E893C3A006DDAF9 /* GoogleService-Info.plist */,
 			);
 			path = instogram;
-			sourceTree = "<group>";
-		};
-		17C2E2651E93B3B900764337 /* DataSource */ = {
-			isa = PBXGroup;
-			children = (
-				17C2E25D1E93915700764337 /* PhotoCellDataSource.swift */,
-				17C2E2681E93B48900764337 /* CommentCellDataSource.swift */,
-			);
-			name = DataSource;
 			sourceTree = "<group>";
 		};
 		17C2E2661E93B3DB00764337 /* Model */ = {
@@ -270,7 +256,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				17393EB01E895496006DDAF9 /* MainViewController.swift in Sources */,
-				17C2E2691E93B48900764337 /* CommentCellDataSource.swift in Sources */,
 				17393E981E893590006DDAF9 /* AppDelegate.swift in Sources */,
 				50C7089B1E8CB1E900FF2D94 /* SignUpViewController.swift in Sources */,
 				17C2E2601E93927700764337 /* Post.swift in Sources */,
@@ -279,7 +264,6 @@
 				17393EB21E8D2417006DDAF9 /* TakePhotoViewController.swift in Sources */,
 				17C2E2621E93B18800764337 /* Comment.swift in Sources */,
 				17C2E2641E93B34700764337 /* CommentTableViewController.swift in Sources */,
-				17C2E25E1E93915700764337 /* PhotoCellDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

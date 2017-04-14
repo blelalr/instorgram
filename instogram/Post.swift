@@ -8,54 +8,26 @@
 
 import Foundation
 import SwiftyJSON
-//temp
-let ArticlesURL = URL(string: "https://hpd-iosdev.firebaseio.com/news/latest.json")!
-//temp
 
 class Post {
-    var authorUID: String?
-    var email: String?
-    var imagePath: String?
-    var imageURL: URL?
-    var postDate: Date
-
-    init(rawData: JSON){
-        authorUID = rawData["category"].string
-        email = rawData["heading"].string
-        imagePath = "IMAGEPATH"
-        let urlString = rawData["imageUrl"].string!
-        imageURL = URL(string: urlString)!
-        let publishedDateMS = rawData["publishedDate"].double!
-        postDate = Date(timeIntervalSince1970: publishedDateMS / 1000)
-    }
+    var authorUID: String? = nil
+    var email: String? = nil
+    var imagePath: String? = nil
+    var imageURL: String? = nil
+    var postDate: Int = Int(round(Date().timeIntervalSince1970 * 1000))
+    var postDateReverse: Int = -Int(round(Date().timeIntervalSince1970 * 1000))
     
-    //temp
-    class func downloadLatestArticles(completionHandler: @escaping ([Post]?, Error?) -> Void) {
-        let session = URLSession.shared
+    func toDictionary(from: Post) -> [String: Any]{
         
-        let task = session.dataTask(with: ArticlesURL) { data, response, error in
-            if let error = error {
-                print("下載新聞錯誤: \(error)")
-                completionHandler(nil, error)
-                return
-            }
-            
-            if let jsonArray = JSON(data: data!).array {
-                //                var articles = [Article]()
-                //                for jsonObj in jsonArray {
-                //                    let article = Article(rawData: jsonObj)
-                //                    articles.append(article)
-                //                }
-                
-                let articles = jsonArray.map { Post(rawData: $0) }
-                
-                completionHandler(articles, nil)
-                //                self.articles = articles
-                //                self.dataResource.articles = articles
-                print("新聞下載完成！！")
-            }
-        }
-        task.resume()
-    }
+        let dic: [String: Any] = [
+            "authorUID": from.authorUID!,
+            "email": from.email!,
+            "imagePath":from.imagePath!,
+            "imageURL":from.imageURL!,
+            "postDate":from.postDate,
+            "postDateReverse":from.postDateReverse,
+        ]
 
+        return dic
+    }
 }

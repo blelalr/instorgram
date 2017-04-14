@@ -14,6 +14,12 @@ import FirebaseDatabaseUI
 import SDWebImage
 import SVProgressHUD
 
+class PhotoCell: UITableViewCell{
+    @IBOutlet weak var accountLabel: UILabel!
+    @IBOutlet weak var postImage: UIImageView!
+    @IBOutlet weak var messageLabel: UILabel!
+}
+
 class MainViewController: UIViewController, UITableViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     let imagePicker = UIImagePickerController()
     @IBOutlet weak var tableView: UITableView!
@@ -22,31 +28,21 @@ class MainViewController: UIViewController, UITableViewDelegate, UINavigationCon
     var postsRef:  FIRDatabaseReference!
 //    var dataSource = PhotoCellDataSource()
     var dataSource: FUITableViewDataSource!
-    var Posts = [Post](){
-        didSet{
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
-//        tableView.dataSource = dataSource
         tableView.delegate = self
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 478
         
         ref = FIRDatabase.database().reference()
-
         postsRef = ref.child("posts")
-        dataSource = tableView.bind(to: postsRef) { tableView, indexPath, snapshot -> UITableViewCell in
+        
+        let query = postsRef.queryOrdered(byChild: "postDateReverse")
+        dataSource = tableView.bind(to: query) { tableView, indexPath, snapshot -> UITableViewCell in
             let cell = tableView.dequeueReusableCell(withIdentifier: "photoCell") as! PhotoCell
 
             if let psotData = snapshot.value as? [String: Any] {
                 cell.accountLabel.text = psotData["email"] as? String
-                    
-//                cell.messageLabel.text = Posts[indexPath.row].email
-                
                 cell.postImage.sd_setImage(with: URL(string: psotData["imageURL"] as! String))
 
             }
@@ -54,27 +50,9 @@ class MainViewController: UIViewController, UITableViewDelegate, UINavigationCon
             return cell
         }
         
-        
-//        download()
-
     }
     
-//    func download() {
-//        Post.downloadLatestArticles { (Posts, error) in
-//            if let error = error {
-//                print("\(error)")
-//                return
-//            }
-//            if let Posts = Posts {
-//                self.Posts = Posts
-//                self.dataSource.Posts = Posts
-//            }
-//            DispatchQueue.main.async {
-//                self.tableView.reloadData()
-//            }
-//        }
-//    }
-    
+
     @IBAction func SignOut(_ sender: Any) {
         try! FIRAuth.auth()?.signOut()
     }
@@ -82,7 +60,6 @@ class MainViewController: UIViewController, UITableViewDelegate, UINavigationCon
     @IBAction func TakePicTap(_ sender: Any) {
         
         if UIImagePickerController.isCameraDeviceAvailable( UIImagePickerControllerCameraDevice.front) {
-            
             imagePicker.delegate = self
             imagePicker.sourceType = UIImagePickerControllerSourceType.camera
             present(imagePicker, animated: true, completion: nil)
@@ -103,14 +80,6 @@ class MainViewController: UIViewController, UITableViewDelegate, UINavigationCon
         
         let currentUser = (FIRAuth.auth()?.currentUser)!
         
-        var postData: [String: Any] = [
-            "authorUID": currentUser.uid,
-            "email": currentUser.email!,
-            "imagePath":"",
-            "imageURL":"",
-            "postDate":""
-        ]
-        
         if let imageData = UIImageJPEGRepresentation(image, 0.7) {
             let metadata = FIRStorageMetadata()
             metadata.contentType = "image/jpeg"
@@ -130,13 +99,16 @@ class MainViewController: UIViewController, UITableViewDelegate, UINavigationCon
                 debugPrint(metadata.downloadURL()!)
                 
                 //
-                postData["imagePath"] = imageRef.fullPath
-                postData["imageURL"] = metadata.downloadURL()!.absoluteString
+                let post = Post()
+                post.authorUID = currentUser.uid
+                post.email = currentUser.email
+                post.imagePath = imageRef.fullPath
+                post.imageURL = metadata.downloadURL()!.absoluteString
                 let postDate = Int(round(Date().timeIntervalSince1970 * 1000))
-                postData["postDate"] = postDate
-                postData["postDateReverse"] = -postDate
-                
-                postRef.updateChildValues(postData)
+                post.postDate = postDate
+                post.postDateReverse = -postDate
+
+                postRef.updateChildValues(Post().toDictionary(from: post))
             }
             
             uploadTask.observe(.progress, handler:{ (snapshot) in
