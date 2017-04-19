@@ -547,7 +547,7 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z2m-8h-Q2M">
-                                <rect key="frame" x="0.0" y="499" width="375" height="55"/>
+                                <rect key="frame" x="0.0" y="498" width="375" height="55"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tZL-ub-VEf">
                                         <rect key="frame" x="305" y="0.0" width="70" height="55"/>
@@ -586,7 +586,7 @@
                             <constraint firstItem="z2m-8h-Q2M" firstAttribute="leading" secondItem="YgL-iD-HQD" secondAttribute="leading" id="MtZ-O2-SN0"/>
                             <constraint firstAttribute="trailing" secondItem="cFJ-tz-uf9" secondAttribute="trailing" id="O0G-kJ-e7J"/>
                             <constraint firstItem="Bt6-fQ-Fa0" firstAttribute="top" secondItem="cFJ-tz-uf9" secondAttribute="bottom" id="Shs-ik-u0V"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="z2m-8h-Q2M" secondAttribute="bottom" constant="49" id="YKt-pd-bhg"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="z2m-8h-Q2M" secondAttribute="bottom" constant="50" id="YKt-pd-bhg"/>
                         </constraints>
                     </view>
                     <connections>

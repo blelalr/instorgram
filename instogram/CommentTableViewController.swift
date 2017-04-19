@@ -37,7 +37,6 @@ class CommentViewController: UIViewController, UITableViewDataSource, UITableVie
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         NotificationCenter.default.addObserver(self, selector: #selector(CommentViewController.keyboardWillShow(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-//        NotificationCenter.default.addObserver(self, selector: #selector(CommentViewController.keyboardWillHide(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
     }
     
     // MARK: - Keyboard
@@ -45,7 +44,7 @@ class CommentViewController: UIViewController, UITableViewDataSource, UITableVie
         DispatchQueue.main.async(execute: {
             let info:NSDictionary = notification.userInfo! as NSDictionary
             let kbSize = (info.object(forKey: UIKeyboardFrameBeginUserInfoKey) as AnyObject).cgRectValue.size
-            self.commentViewBottom.constant = kbSize.height + 50
+            self.commentViewBottom.constant = kbSize.height + 5
             
         })
     }

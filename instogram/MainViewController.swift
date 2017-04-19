@@ -25,7 +25,8 @@ class MainViewController: UIViewController, UITableViewDelegate, UINavigationCon
     @IBOutlet weak var tableView: UITableView!
     
     var ref: FIRDatabaseReference!
-    var postsRef:  FIRDatabaseReference!
+    var postsRef: FIRDatabaseReference!
+    var commentsRef: FIRDatabaseReference!
 //    var dataSource = PhotoCellDataSource()
     var dataSource: FUITableViewDataSource!
     override func viewDidLoad() {
@@ -36,6 +37,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UINavigationCon
         
         ref = FIRDatabase.database().reference()
         postsRef = ref.child("posts")
+        commentsRef = ref.child("comments")
         
         let query = postsRef.queryOrdered(byChild: "postDateReverse")
         dataSource = tableView.bind(to: query) { tableView, indexPath, snapshot -> UITableViewCell in
@@ -75,7 +77,9 @@ class MainViewController: UIViewController, UITableViewDelegate, UINavigationCon
         dismiss(animated: true, completion: nil)
 
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        
         let postRef = postsRef.childByAutoId()
+        let commentRef = postRef
         let postKey = postRef.key
         
         let currentUser = (FIRAuth.auth()?.currentUser)!
@@ -109,6 +113,8 @@ class MainViewController: UIViewController, UITableViewDelegate, UINavigationCon
                 post.postDateReverse = -postDate
 
                 postRef.updateChildValues(Post().toDictionary(from: post))
+                commentRef.updateChildValues(["id": imageRef.fullPath])
+                
             }
             
             uploadTask.observe(.progress, handler:{ (snapshot) in

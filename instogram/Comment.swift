@@ -9,14 +9,25 @@
 import Foundation
 
 class Comment {
-    let authorUID: String?
-    let email: String?
-    let message: String?
+    var authorUID: String?
+    var email: String?
+    var message: String?
     
-    init(){
-        authorUID = "AuthorUID"
-        email = "Email"
-        message = "Comment"
+    init() {
+        authorUID = nil
+        email = nil
+        message = nil
+    }
+    
+    func toDictionary(from: Comment) -> [String: Any]{
+        
+        let dic: [String: Any] = [
+            "authorUID": from.authorUID!,
+            "email": from.email!,
+            "message":from.message!,
+            ]
+        
+        return dic
     }
 
 }
